@@ -25,7 +25,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # Frontend Mentor - Rock, Paper, Scissors
 
-![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Rock, Paper, Scissors coding challenge](./assets/design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
