@@ -7,26 +7,26 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
-  @Component({
-    components: {
-      VHeader: () => import('@/components/VHeader.vue'),
-      VSelection: () => import('@/components/VSelection.vue'),
-      VRules: () => import('@/components/VRules.vue')
-    }
-  })
-  export default class App extends Vue {}
+@Component({
+  components: {
+    VHeader: () => import("@/components/VHeader.vue"),
+    VSelection: () => import("@/components/VSelection.vue"),
+    VRules: () => import("@/components/VRules.vue")
+  }
+})
+export default class App extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-  #app {
-    margin: 0 auto;
-    padding: 30px;
+#app {
+  margin: 0 auto;
+  padding: 30px;
 
-    @media (min-width: 700px) {
-      padding: 46px 0;
-      max-width: 700px;
-    }
+  @media (min-width: 700px) {
+    padding: 46px 0;
+    max-width: 700px;
   }
+}
 </style>

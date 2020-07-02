@@ -5,35 +5,39 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
-  @Component
-  export default class VLogo extends Vue {
-    private type: boolean = 2 > 1;
+@Component
+export default class VLogo extends Vue {
+  private type: boolean = 2 > 1;
 
-    get logoImg(): string {
-      return this.type ? require('@/assets/img/logo.svg') : require('@/assets/img/logo-bonus.svg')
-    }
-
-    get logoAlt(): string {
-      return this.type ? 'Rock, Paper, Scissors' : 'Rock, Paper, Scissors, Lizard, Spock'
-    }
+  get logoImg(): string {
+    return this.type
+      ? require("@/assets/img/logo.svg")
+      : require("@/assets/img/logo-bonus.svg");
   }
+
+  get logoAlt(): string {
+    return this.type
+      ? "Rock, Paper, Scissors"
+      : "Rock, Paper, Scissors, Lizard, Spock";
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-  .v-logo {
-    flex-grow: 1;
-    line-height: 0;
+.v-logo {
+  flex-grow: 1;
+  line-height: 0;
 
+  img {
+    max-width: mobile-vw(86px);
+  }
+
+  @include desktop {
     img {
-      max-width: mobile-vw(86px);
-    }
-
-    @include desktop {
-      img {
-        max-width: none;
-      }
+      max-width: none;
     }
   }
+}
 </style>
