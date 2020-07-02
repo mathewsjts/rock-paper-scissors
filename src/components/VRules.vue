@@ -89,13 +89,13 @@ export default class VRules extends Vue {
       color: $dark-text;
       font-size: mobile-vw(24px);
       font-weight: 700;
-      margin: 0 0 mobile-vw(116px);
+      margin: 0 0 mobile-vw(56px);
       text-transform: uppercase;
     }
 
     &__image {
       display: block;
-      margin: 0 0 mobile-vw(116px);
+      margin: 0 0 mobile-vw(56px);
       width: mobile-vw(302px);
     }
 

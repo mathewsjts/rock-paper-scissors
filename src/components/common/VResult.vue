@@ -86,6 +86,7 @@ export default class VResult extends Vue {}
       button {
         border: none;
         border-radius: mobile-vw(9px);
+        background: #ffffff;
         color: $dark-text;
         cursor: pointer;
         height: mobile-vw(48px);
