@@ -6,7 +6,7 @@ $score-text: #2a46c0;
 $header-outline: #606e85;
 
 @function mobile-vw($pixel) {
-  @return ($pixel / $mobile-size) * 100vw
+  @return ($pixel / $mobile-size) * 85vw
 }
 
 @function desktop-vw($pixel) {
