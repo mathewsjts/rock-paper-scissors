@@ -51,7 +51,7 @@ export default class VRules extends Vue {
   &__activator {
     background: transparent;
     border: solid 2px #5d718a;
-    border-radius: mobile-vw(6px);
+    border-radius: mobile-vw(9px);
     bottom: mobile-vw(56px);
     color: #ffffff;
     cursor: pointer;

@@ -1,7 +1,12 @@
 $mobile-size: 375px;
+$desktop-size: 1366px;
 
 @function mobile-vw($pixel) {
   @return ($pixel / $mobile-size) * 100vw
+}
+
+@function desktop-vw($pixel) {
+  @return ($pixel / $desktop-size) * 100vw
 }
 
 @mixin desktop {

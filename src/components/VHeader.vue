@@ -21,10 +21,10 @@ export default class VHeader extends Vue {}
 .v-header {
   align-items: center;
   border: solid 2px #5d718a;
-  border-radius: mobile-vw(6px);
+  border-radius: mobile-vw(9px);
   display: flex;
   justify-content: space-between;
-  margin: 0 0 mobile-vw(102px);
+  margin: 0 0 mobile-vw(62px);
   padding: mobile-vw(9px);
 
   @include desktop {

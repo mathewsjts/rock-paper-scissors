@@ -22,7 +22,7 @@ export default class VScore extends Vue {}
   align-items: center;
   background: #fff;
   border: solid 1px #000;
-  border-radius: mobile-vw(6px);
+  border-radius: mobile-vw(9px);
   display: flex;
   flex-direction: column;
   height: mobile-vw(74px);
