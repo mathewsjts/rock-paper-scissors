@@ -77,8 +77,8 @@ export default new Vuex.Store({
       commit('toggleBonus')
     },
 
-    chooseButton: ({ commit }: any, choosen: IButton) => {
-      const random: IButton = selectRandom()
+    chooseButton: ({ commit, state }: any, choosen: IButton) => {
+      const random: IButton = selectRandom(state.bonus)
 
       commit('setPlaying')
       commit('setUserChoice', choosen)

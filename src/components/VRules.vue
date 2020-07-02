@@ -1,13 +1,13 @@
 <template>
   <div class="v-rules">
     <button class="v-rules__activator" @click="toggleBackdrop">
-      Rules
+      Regras
     </button>
     <transition name="fade">
       <div class="v-rules__backdrop" v-if="backdropActive">
         <div class="v-rules__backdrop__content">
           <div class="v-rules__backdrop__title">
-            Rules
+            Regras
           </div>
           <img
             :src="require('@/assets/img/image-rules.svg')"

@@ -1,6 +1,6 @@
 <template>
   <div class="v-score">
-    <small>Score</small>
+    <small>Pontos</small>
     <span>{{ score }}</span>
   </div>
 </template>

@@ -7,7 +7,7 @@
         :no-click="true"
         :class="{ winner: status === 'win' }"
       />
-      <span>You picked</span>
+      <span>Sua escolha</span>
     </div>
     <div class="v-result__house">
       <v-button
@@ -16,13 +16,13 @@
         :no-click="true"
         :class="{ winner: status === 'lose' }"
       />
-      <span>The house picked</span>
+      <span>Escolha da casa</span>
     </div>
     <div class="v-result__status" v-if="choices.house">
-      <span v-if="status === 'win'">You win!</span>
-      <span v-else-if="status === 'lose'">You lose!</span>
-      <span v-else>Draw!</span>
-      <button @click="playAgain">Play again</button>
+      <span v-if="status === 'win'">Você ganhou!</span>
+      <span v-else-if="status === 'lose'">Você perdeu!</span>
+      <span v-else>Empate!</span>
+      <button @click="playAgain">Jogar novamente</button>
     </div>
   </section>
 </template>
