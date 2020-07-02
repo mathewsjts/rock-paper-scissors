@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-header />
-    <v-selection />
+    <v-game />
     <v-rules />
   </div>
 </template>
@@ -12,7 +12,7 @@ import { Component, Vue } from "vue-property-decorator";
 @Component({
   components: {
     VHeader: () => import("@/components/VHeader.vue"),
-    VSelection: () => import("@/components/VSelection.vue"),
+    VGame: () => import("@/components/VGame.vue"),
     VRules: () => import("@/components/VRules.vue")
   }
 })

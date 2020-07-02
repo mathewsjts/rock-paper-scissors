@@ -10,9 +10,16 @@
             Rules
           </div>
           <img
-            :src="rulesImg"
-            :alt="rulesAlt"
+            :src="require('@/assets/img/image-rules.svg')"
+            alt="Rock, Paper, Scissors Rules"
             class="v-rules__backdrop__image"
+            v-if="!bonus"
+          />
+          <img
+            :src="require('@/assets/img/image-rules-bonus.svg')"
+            alt="Rock, Paper, Scissors, Lizard, Spock Rules"
+            class="v-rules__backdrop__image"
+            v-else
           />
           <button class="v-rules__backdrop__close" @click="toggleBackdrop" />
         </div>
@@ -23,23 +30,15 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { mapState } from "vuex";
 
-@Component
+@Component({
+  computed: {
+    ...mapState(['bonus'])
+  }
+})
 export default class VRules extends Vue {
-  private type: boolean = 2 > 1;
   private backdropActive = false;
-
-  get rulesImg(): string {
-    return this.type
-      ? require("@/assets/img/image-rules.svg")
-      : require("@/assets/img/image-rules-bonus.svg");
-  }
-
-  get rulesAlt(): string {
-    return this.type
-      ? "Rock, Paper, Scissors Rules"
-      : "Rock, Paper, Scissors, Lizard, Spock Rules";
-  }
 
   private toggleBackdrop(): void {
     this.backdropActive = !this.backdropActive;

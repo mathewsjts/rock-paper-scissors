@@ -4,7 +4,11 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    bonus: false,
+    playing: true,
+    score: 0
+  },
   mutations: {},
   actions: {},
   modules: {}

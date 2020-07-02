@@ -1,14 +1,19 @@
 <template>
   <div class="v-score">
     <small>Score</small>
-    <span>12</span>
+    <span>{{ score }}</span>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { mapState } from "vuex";
 
-@Component
+@Component({
+  computed: {
+    ...mapState(['score'])
+  }
+})
 export default class VScore extends Vue {}
 </script>
 

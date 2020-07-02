@@ -1,28 +1,28 @@
 <template>
   <div class="v-logo">
-    <img :src="logoImg" :alt="logoAlt" />
+    <img
+      :src="require('@/assets/img/logo.svg')"
+      alt="Rock, Paper, Scissors"
+      v-if="!bonus"
+    />
+    <img
+      :src="require('@/assets/img/logo-bonus.svg')"
+      alt="Rock, Paper, Scissors, Lizard, Spock"
+      v-else
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { mapState } from "vuex";
 
-@Component
-export default class VLogo extends Vue {
-  private type: boolean = 2 > 1;
-
-  get logoImg(): string {
-    return this.type
-      ? require("@/assets/img/logo.svg")
-      : require("@/assets/img/logo-bonus.svg");
+@Component({
+  computed: {
+    ...mapState(['bonus'])
   }
-
-  get logoAlt(): string {
-    return this.type
-      ? "Rock, Paper, Scissors"
-      : "Rock, Paper, Scissors, Lizard, Spock";
-  }
-}
+})
+export default class VLogo extends Vue {}
 </script>
 
 <style lang="scss" scoped>
@@ -36,7 +36,7 @@ export default class VLogo extends Vue {
 
   @include desktop {
     img {
-      max-width: none;
+      max-width: 156px;
     }
   }
 }
