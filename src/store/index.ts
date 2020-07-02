@@ -13,7 +13,11 @@ export default new Vuex.Store({
     bonus: false,
     playing: true,
     score: 0,
-    status: null
+    status: null,
+    choices: {
+      user: null,
+      house: null
+    }
   },
   mutations: {
     setScore(state, score) {
@@ -25,13 +29,31 @@ export default new Vuex.Store({
       LocalStorage.set('bonus', state.bonus)
     },
 
+    setUserChoice(state, choice) {
+      state.choices.user = choice
+    },
+
+    setHouseChoice(state, choice) {
+      state.choices.house = choice
+    },
+
+    setPlaying(state) {
+      state.playing = false
+    },
+
     setStatus(state, status) {
       if (status === 'win') state.score++
       if (status === 'lose') state.score--
       LocalStorage.set('score', state.score)
 
       state.status = status
-      state.playing = false
+    },
+
+    playAgain(state) {
+      state.status = null
+      state.choices.user = null
+      state.choices.house = null
+      state.playing = true
     }
   },
   actions: {
@@ -58,18 +80,29 @@ export default new Vuex.Store({
     chooseButton: ({ commit }: any, choosen: IButton) => {
       const random: IButton = selectRandom()
 
-      if (choosen.beats.includes(random.name)) {
-        commit('setStatus', 'win')
-        return
-      }
+      commit('setPlaying')
+      commit('setUserChoice', choosen)
 
-      if (random.beats.includes(choosen.name)) {
-        commit('setStatus', 'lose')
-        return
-      }
+      setTimeout(() => {
+        commit('setHouseChoice', random)
 
-      commit('setStatus', null)
-      return
+        if (choosen.beats.includes(random.name)) {
+          commit('setStatus', 'win')
+          return
+        }
+
+        if (random.beats.includes(choosen.name)) {
+          commit('setStatus', 'lose')
+          return
+        }
+
+        commit('setStatus', null)
+        return
+      }, 1000)
+    },
+
+    playAgain: ({ commit }: any) => {
+      commit('playAgain')
     }
   },
   modules: {}

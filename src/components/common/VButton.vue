@@ -9,6 +9,7 @@
         <img
           :src="currentButton.icon"
           :alt="currentButton.name"
+          v-if="currentButton.name !== 'no-type'"
         />
       </span>
     </button>
@@ -19,6 +20,8 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { mapState, mapActions } from "vuex";
 import buttons from '../../utils/buttons'
+
+import IButton from "@/models/IButton";
 
 @Component({
   computed: {
@@ -33,8 +36,18 @@ export default class VButton extends Vue {
     required: true
   }) private buttonType: any;
 
+  @Prop({
+    default: false
+  }) private noClick: boolean | undefined;
+
   get currentButton(): any {
-    return buttons[this.buttonType]
+    return this.buttonType ? buttons[this.buttonType] : null
+  }
+
+  private chooseButton(button: IButton) {
+    if (!this.noClick) {
+      this.$store.dispatch('chooseButton', button)
+    }
   }
 }
 </script>
@@ -47,15 +60,20 @@ export default class VButton extends Vue {
       cursor: pointer;
       height: mobile-vw(130px);
       position: relative;
-      transition: ease all 1s;
       width: mobile-vw(130px);
 
       * {
-        transition: ease all 1s;
+        transition: ease all .25s;
       }
 
       &:hover {
         transform: scale(1.1);
+      }
+
+      &.no-type {
+        .v-button__content {
+          background: #192744;
+        }
       }
     }
 

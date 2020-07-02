@@ -1,7 +1,9 @@
 <template>
   <section class="v-game">
-    <v-selection v-if="playing" />
-    <v-result v-else />
+    <transition mode="out-in" name="scale">
+      <v-selection v-if="playing" />
+      <v-result v-else />
+    </transition>
   </section>
 </template>
 
@@ -21,3 +23,15 @@ import { mapState } from "vuex";
 })
 export default class VGame extends Vue {}
 </script>
+
+<style lang="scss">
+  .scale-enter-active,
+  .scale-leave-active {
+    transition: all .25s;
+  }
+
+  .scale-enter,
+  .scale-leave-to {
+    transform: scale(0);
+  }
+</style>

@@ -1,6 +1,13 @@
 import IButton from "@/models/IButton";
 
 const buttons: any = {
+  'no-type': {
+    name: 'no-type',
+    color: 'transparent',
+    hover: 'transparent',
+    icon: null,
+    beats: []
+  },
   rock: {
     name: 'rock',
     color: '#dd405d',
