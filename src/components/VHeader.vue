@@ -21,13 +21,13 @@
   .v-header {
     align-items: center;
     border: solid 2px #5d718a;
-    border-radius: 6px;
+    border-radius: mobile-vw(6px);
     display: flex;
     justify-content: space-between;
-    margin: 0 0 102px;
-    padding: 9px;
+    margin: 0 0 mobile-vw(102px);
+    padding: mobile-vw(9px);
 
-    @media (min-width: 700px) {
+    @include desktop {
       border-radius: 9px;
       margin: 0 0 62px;
       padding: 22px;

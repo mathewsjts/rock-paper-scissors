@@ -1,0 +1,11 @@
+$mobile-size: 375px;
+
+@function mobile-vw($pixel) {
+  @return ($pixel / $mobile-size) * 100vw
+}
+
+@mixin desktop {
+  @media (min-width: 700px) {
+    @content
+  }
+}

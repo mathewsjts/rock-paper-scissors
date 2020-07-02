@@ -27,10 +27,10 @@
     line-height: 0;
 
     img {
-      max-width: 86px;
+      max-width: mobile-vw(86px);
     }
 
-    @media (min-width: 700px) {
+    @include desktop {
       img {
         max-width: none;
       }
