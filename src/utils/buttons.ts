@@ -57,22 +57,26 @@ const buttons: any = {
   }
 }
 
+const getRndInteger = (max: number) => {
+  return Math.floor(Math.random() * max);
+}
+
 export const selectRandom = (bonus: boolean): IButton => {
   const buttonsArray = Object.keys(buttons).map((k: string) => buttons[k])
   const normalButtons = buttonsArray.filter((b: any) => b.active && !b.bonus)
-  const bonusButtons = buttonsArray.filter((b: any) => b.active && b.bonus)
+  const bonusButtons = buttonsArray.filter((b: any) => b.active)
+
+  let random: any
 
   if (bonus) {
-    const keys: any = Object.keys(bonusButtons)
-    const random: number = keys.length * Math.random() << 0
-
-    return bonusButtons[keys[random]]
+    const randomIndex = getRndInteger(bonusButtons.length)
+    random = bonusButtons[randomIndex]
   } else {
-    const keys: any = Object.keys(normalButtons)
-    const random: number = keys.length * Math.random() << 0
-
-    return normalButtons[keys[random]]
+    const randomIndex = getRndInteger(normalButtons.length)
+    random = normalButtons[randomIndex]
   }
+
+  return random
 }
 
 export default buttons
