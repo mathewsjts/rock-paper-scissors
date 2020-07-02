@@ -50,7 +50,7 @@ export default class VRules extends Vue {
 .v-rules {
   &__activator {
     background: transparent;
-    border: solid 2px #5d718a;
+    border: solid 2px $header-outline;
     border-radius: mobile-vw(9px);
     bottom: mobile-vw(56px);
     color: #ffffff;
@@ -86,7 +86,7 @@ export default class VRules extends Vue {
     }
 
     &__title {
-      color: #293251;
+      color: $dark-text;
       font-size: mobile-vw(24px);
       font-weight: 700;
       margin: 0 0 mobile-vw(116px);

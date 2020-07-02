@@ -20,7 +20,7 @@ export default class VHeader extends Vue {}
 <style lang="scss" scoped>
 .v-header {
   align-items: center;
-  border: solid 2px #5d718a;
+  border: solid 2px $header-outline;
   border-radius: mobile-vw(9px);
   display: flex;
   justify-content: space-between;

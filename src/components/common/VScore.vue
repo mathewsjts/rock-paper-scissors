@@ -32,14 +32,14 @@ export default class VScore extends Vue {}
   width: mobile-vw(74px);
 
   small {
-    color: #283991;
+    color: $score-text;
     font-size: mobile-vw(10px);
     margin: 0 auto mobile-vw(4px);
     text-transform: uppercase;
   }
 
   span {
-    color: #535166;
+    color: $dark-text;
     font-size: mobile-vw(32px);
     font-weight: 700;
   }

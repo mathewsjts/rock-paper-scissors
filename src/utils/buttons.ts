@@ -1,22 +1,27 @@
 const buttons: any = {
   rock: {
-    color: 'hsl(349, 70%, 56%)',
+    color: '#dd405d',
+    hover: '#dc2e4e',
     icon: require('@/assets/img/icon-rock.svg')
   },
   paper: {
-    color: 'hsl(230, 89%, 65%)',
+    color: '#5671f5',
+    hover: '#4865f4',
     icon: require('@/assets/img/icon-paper.svg')
   },
   scissors: {
-    color: 'hsl(40, 84%, 53%)',
+    color: '#eca922',
+    hover: '#ec9e0e',
     icon: require('@/assets/img/icon-scissors.svg')
   },
   lizard: {
-    color: 'hsl(261, 72%, 63%)',
+    color: '#8c5de5',
+    hover: '#834fe3',
     icon: require('@/assets/img/icon-lizard.svg')
   },
   spock: {
-    color: 'hsl(189, 58%, 57%)',
+    color: '#52bed1',
+    hover: '#40b9ce',
     icon: require('@/assets/img/icon-spock.svg')
   }
 }

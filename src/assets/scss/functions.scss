@@ -1,6 +1,10 @@
 $mobile-size: 375px;
 $desktop-size: 1366px;
 
+$dark-text: #3b4363;
+$score-text: #2a46c0;
+$header-outline: #606e85;
+
 @function mobile-vw($pixel) {
   @return ($pixel / $mobile-size) * 100vw
 }
