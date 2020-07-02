@@ -95,17 +95,17 @@
 
     @include desktop {
       margin: 0 auto;
-      max-width: 480px;
+      max-width: desktop-vw(480px);
 
       &:not(.bonus) {
-        grid-gap: 26px;
+        grid-gap: desktop-vw(26px);
       }
 
       &.bonus {
-        grid-gap: 36px;
+        grid-gap: desktop-vw(36px);
 
         .v-button:nth-child(1) {
-          margin-bottom: -36px;
+          margin-bottom: desktop-vw(-72px);
         }
       }
     }

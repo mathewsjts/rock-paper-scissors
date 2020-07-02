@@ -45,18 +45,18 @@ export default class VScore extends Vue {}
   }
 
   @include desktop {
-    border-radius: 9px;
-    height: 114px;
-    min-width: 114px;
-    width: 114px;
+    border-radius: desktop-vw(9px);
+    height: desktop-vw(114px);
+    min-width: desktop-vw(114px);
+    width: desktop-vw(114px);
 
     small {
-      font-size: 14px;
-      margin: 0 auto 6px;
+      font-size: desktop-vw(14px);
+      margin: 0 auto desktop-vw(6px);
     }
 
     span {
-      font-size: 46px;
+      font-size: desktop-vw(46px);
     }
   }
 }

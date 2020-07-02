@@ -88,37 +88,37 @@ export default class VButton extends Vue {
 
     @include desktop {
       button {
-        border-radius: 200px;
-        height: 200px;
-        width: 200px;
+        border-radius: desktop-vw(200px);
+        height: desktop-vw(200px);
+        width: desktop-vw(200px);
       }
 
       .v-button__content {
-        border-radius: 152px;
-        height: 152px;
-        width: 152px;
+        border-radius: desktop-vw(152px);
+        height: desktop-vw(152px);
+        width: desktop-vw(152px);
 
         img {
-          height: 82px;
-          width: 82px;
+          height: desktop-vw(82px);
+          width: desktop-vw(82px);
         }
       }
 
       &.bonus {
         button {
-          border-radius: 144px;
-          height: 144px;
-          width: 144px;
+          border-radius: desktop-vw(144px);
+          height: desktop-vw(144px);
+          width: desktop-vw(144px);
         }
 
         .v-button__content {
-          border-radius: 112px;
-          height: 112px;
-          width: 112px;
+          border-radius: desktop-vw(112px);
+          height: desktop-vw(112px);
+          width: desktop-vw(112px);
 
           img {
-            height: 62px;
-            width: 62px;
+            height: desktop-vw(62px);
+            width: desktop-vw(62px);
           }
         }
       }

@@ -36,7 +36,7 @@ export default class VLogo extends Vue {}
 
   @include desktop {
     img {
-      max-width: 156px;
+      max-width: desktop-vw(156px);
     }
   }
 }

@@ -22,11 +22,11 @@ export default class App extends Vue {}
 <style lang="scss" scoped>
 #app {
   margin: 0 auto;
-  padding: 30px;
+  padding: mobile-vw(30px);
 
-  @media (min-width: 700px) {
-    padding: 46px 0;
-    max-width: 700px;
+  @include desktop {
+    padding: desktop-vw(46px) 0;
+    max-width: desktop-vw(700px);
   }
 }
 </style>

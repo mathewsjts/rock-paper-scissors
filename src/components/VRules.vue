@@ -115,15 +115,15 @@ export default class VRules extends Vue {
 
   @include desktop {
     &__activator {
-      border-radius: 9px;
-      bottom: 64px;
-      height: 42px;
-      font-size: 14px;
+      border-radius: desktop-vw(9px);
+      bottom: desktop-vw(32px);
+      height: desktop-vw(42px);
+      font-size: desktop-vw(14px);
       left: auto;
-      letter-spacing: 2px;
-      right: 64px;
+      letter-spacing: desktop-vw(2px);
+      right: desktop-vw(32px);
       transform: none;
-      width: 130px;
+      width: desktop-vw(130px);
     }
 
     &__backdrop {
@@ -131,30 +131,30 @@ export default class VRules extends Vue {
 
       &__content {
         background: #ffffff;
-        border-radius: 14px;
+        border-radius: desktop-vw(14px);
         overflow: hidden;
-        padding: 32px;
+        padding: desktop-vw(32px);
         position: relative;
-        width: 402px;
+        width: desktop-vw(402px);
       }
 
       &__title {
-        font-size: 24px;
-        margin: 0 0 52px;
+        font-size: desktop-vw(24px);
+        margin: 0 0 desktop-vw(52px);
         text-align: left;
       }
 
       &__image {
         margin: 0 auto;
-        width: 302px;
+        width: desktop-vw(302px);
       }
 
       &__close {
-        height: 20px;
+        height: desktop-vw(20px);
         position: absolute;
-        right: 32px;
-        top: 38px;
-        width: 20px;
+        right: desktop-vw(32px);
+        top: desktop-vw(38px);
+        width: desktop-vw(20px);
       }
     }
   }

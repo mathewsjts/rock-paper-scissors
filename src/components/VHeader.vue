@@ -28,9 +28,9 @@ export default class VHeader extends Vue {}
   padding: mobile-vw(9px);
 
   @include desktop {
-    border-radius: 9px;
-    margin: 0 0 62px;
-    padding: 22px;
+    border-radius: desktop-vw(9px);
+    margin: 0 0 desktop-vw(62px);
+    padding: desktop-vw(22px);
   }
 }
 </style>
