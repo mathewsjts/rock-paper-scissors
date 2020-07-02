@@ -10,7 +10,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    bonus: true,
+    bonus: false,
     playing: true,
     score: 0,
     status: null
@@ -18,6 +18,11 @@ export default new Vuex.Store({
   mutations: {
     setScore(state, score) {
       state.score = score
+    },
+
+    toggleBonus(state) {
+      state.bonus = !state.bonus
+      LocalStorage.set('bonus', state.bonus)
     },
 
     setStatus(state, status) {
@@ -30,12 +35,24 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    loadBonus: ({ commit }: any) => {
+      const bonus: boolean = LocalStorage.get('bonus')
+
+      if (bonus) {
+        commit('toggleBonus')
+      }
+    },
+
     loadScore: ({ commit }: any) => {
       const score: number = LocalStorage.get('score')
 
       if (score) {
         commit('setScore', score)
       }
+    },
+
+    toggleBonus: ({ commit }: any) => {
+      commit('toggleBonus')
     },
 
     chooseButton: ({ commit }: any, choosen: IButton) => {

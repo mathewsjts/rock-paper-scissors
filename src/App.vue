@@ -8,12 +8,17 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { mapActions } from "vuex";
 
 @Component({
   components: {
     VHeader: () => import("@/components/VHeader.vue"),
     VGame: () => import("@/components/VGame.vue"),
     VRules: () => import("@/components/VRules.vue")
+  },
+  created() {
+    this.$store.dispatch('loadBonus')
+    this.$store.dispatch('loadScore')
   }
 })
 export default class App extends Vue {}

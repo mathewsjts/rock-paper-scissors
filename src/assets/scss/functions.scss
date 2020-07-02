@@ -10,7 +10,8 @@ $header-outline: #606e85;
 }
 
 @function desktop-vw($pixel) {
-  @return ($pixel / $desktop-size) * 100vw
+  //@return ($pixel / $desktop-size) * 100vw
+  @return $pixel
 }
 
 @mixin desktop {

@@ -3,11 +3,13 @@
     <img
       :src="require('@/assets/img/logo.svg')"
       alt="Rock, Paper, Scissors"
+      @click="toggleBonus"
       v-if="!bonus"
     />
     <img
       :src="require('@/assets/img/logo-bonus.svg')"
       alt="Rock, Paper, Scissors, Lizard, Spock"
+      @click="toggleBonus"
       v-else
     />
   </div>
@@ -15,11 +17,14 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 @Component({
   computed: {
     ...mapState(['bonus'])
+  },
+  methods: {
+    ...mapActions(['toggleBonus'])
   }
 })
 export default class VLogo extends Vue {}
@@ -31,6 +36,7 @@ export default class VLogo extends Vue {}
   line-height: 0;
 
   img {
+    cursor: pointer;
     max-width: mobile-vw(86px);
   }
 
