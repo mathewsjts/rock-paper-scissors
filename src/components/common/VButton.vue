@@ -47,7 +47,12 @@ export default class VButton extends Vue {
       cursor: pointer;
       height: mobile-vw(130px);
       position: relative;
+      transition: ease all 1s;
       width: mobile-vw(130px);
+
+      * {
+        transition: ease all 1s;
+      }
 
       &:hover {
         transform: scale(1.1);
