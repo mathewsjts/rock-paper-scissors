@@ -7,11 +7,19 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 @Component({
   computed: {
     ...mapState(['score'])
+  },
+
+  created() {
+    this.loadScore()
+  },
+
+  methods: {
+    ...mapActions(['loadScore'])
   }
 })
 export default class VScore extends Vue {}

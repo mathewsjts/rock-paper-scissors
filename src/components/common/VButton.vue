@@ -1,13 +1,14 @@
 <template>
   <div class="v-button" :class="{ 'bonus': bonus }">
     <button
-      :class="buttonType"
+      :class="currentButton.name"
       :style="`background: ${currentButton.color};`"
+      @click="chooseButton(currentButton)"
     >
       <span class="v-button__content">
         <img
           :src="currentButton.icon"
-          :alt="buttonType"
+          :alt="currentButton.name"
         />
       </span>
     </button>
@@ -16,12 +17,15 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import {mapState} from "vuex";
+import { mapState, mapActions } from "vuex";
 import buttons from '../../utils/buttons'
 
 @Component({
   computed: {
     ...mapState(['bonus'])
+  },
+  methods: {
+    ...mapActions(['chooseButton'])
   }
 })
 export default class VButton extends Vue {
@@ -44,6 +48,10 @@ export default class VButton extends Vue {
       height: mobile-vw(130px);
       position: relative;
       width: mobile-vw(130px);
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     .v-button__content {
