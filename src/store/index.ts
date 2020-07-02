@@ -75,6 +75,7 @@ export default new Vuex.Store({
 
     toggleBonus: ({ commit }: any) => {
       commit('toggleBonus')
+      commit('playAgain')
     },
 
     chooseButton: ({ commit, state }: any, choosen: IButton) => {
